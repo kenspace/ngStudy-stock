@@ -8,6 +8,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { StockMangerComponent } from './stock/stock-manger/stock-manger.component';
+import { StarsComponent } from './stars/stars.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { StockMangerComponent } from './stock/stock-manger/stock-manger.componen
     SidebarComponent,
     FooterComponent,
     ContentComponent,
-    StockMangerComponent
+    StockMangerComponent,
+    StarsComponent
   ],
   imports: [
     BrowserModule

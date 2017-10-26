@@ -6,12 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stock-manger.component.css']
 })
 export class StockMangerComponent implements OnInit {
-
+  private stocks:Array<Stock>;
   constructor() { }
 
   ngOnInit() {
+    this.stocks = [
+      new Stock(1,"IBM",200.68,5,"股票备注",["IT","科技"]),
+      new Stock(2,"IBM",200.68,4,"股票备注",["IT","科技"]),
+      new Stock(3,"IBM",200.68,5,"股票备注",["IT","科技"]),
+      new Stock(4,"IBM",200.68,3,"股票备注",["IT","科技"]),
+      new Stock(5,"IBM",200.68,2,"股票备注",["IT","科技"]),
+      new Stock(6,"IBM",200.68,1,"股票备注",["IT","科技"]),
+    ]
   }
-
 }
 
 export  class  Stock{
