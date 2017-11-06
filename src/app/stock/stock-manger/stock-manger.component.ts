@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router"
+import {StockService} from "../stock.service";
+import {Stock} from "../stock.service";
 
 @Component({
   selector: 'app-stock-manger',
@@ -8,7 +10,7 @@ import {Router} from "@angular/router"
 })
 export class StockMangerComponent implements OnInit {
   private stocks:Array<Stock>;
-  constructor(public router:Router) { }
+  constructor(public router:Router, private stockService:StockService) { }
 
   createx(){
     this.router.navigateByUrl('/stock/1');
@@ -19,26 +21,7 @@ export class StockMangerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.stocks = [
-      new Stock(1,"IBM",200.68,5,"股票备注",["IT","科技"]),
-      new Stock(2,"IBM",200.68,4,"股票备注",["IT","科技"]),
-      new Stock(3,"IBM",200.68,5,"股票备注",["IT","科技"]),
-      new Stock(4,"IBM",200.68,3,"股票备注",["IT","科技"]),
-      new Stock(5,"IBM",200.68,2,"股票备注",["IT","科技"]),
-      new Stock(6,"IBM",200.68,1,"股票备注",["IT","科技"]),
-    ]
+    this.stocks = this.stockService.getStocks();
   }
 }
 
-export  class  Stock{
-  constructor(
-    public id:number,
-    public name:string,
-    public price:number,
-    public rating:number,
-    public desc:string,
-    public categories:Array<string>
-  ){
-
-  }
-}
